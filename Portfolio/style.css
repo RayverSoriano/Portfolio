@@ -72,6 +72,8 @@ section:nth-of-type(even) {
   justify-content: center;
   flex-wrap: wrap;
   min-height: 70vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .home .content {
@@ -155,6 +157,37 @@ section:nth-of-type(even) {
 .about .text p {
   line-height: 1.6;
   font-size: 16px;
+}
+
+/* Skills Section */
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #00ffff;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: #1a1e2d;
+  color: #00ffff;
+  padding: 8px 15px;
+  margin: 5px 10px 5px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+  animation: glowPulse 2s infinite alternate;
+}
+
+.skill-tag:hover {
+  background: #00ffff;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
 
 /* Education Section */
@@ -294,16 +327,6 @@ section:nth-of-type(even) {
   transform: translateY(-2px);
 }
 
-/* --- Glow Animation --- */
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
-  }
-  100% {
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-  }
-}
-
 /* =======================
    Experience Section
    ======================= */
@@ -384,26 +407,6 @@ section:nth-of-type(even) {
   left: -30px;
 }
 
-/* Responsive fishbone layout */
-@media (max-width: 768px) {
-  .fishbone::before {
-    left: 20px;
-  }
-
-  .bone-item,
-  .bone-item.left,
-  .bone-item.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 50px;
-  }
-
-  .bone-item::after {
-    left: 20px;
-  }
-}
-
 /* =======================
    Contact Section
    ======================= */
@@ -414,25 +417,134 @@ section:nth-of-type(even) {
 
 .contact h2 {
   font-size: 32px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-info {
+  flex: 1;
   background: #1a1e2d;
-  display: inline-block;
-  padding: 25px 40px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  text-align: left;
 }
 
-.contact-info p {
-  font-size: 18px;
-  margin: 10px 0;
-  color: #ccc;
-}
-
-.contact-info strong {
+.contact-info h3 {
   color: #00ffff;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.contact-item i {
+  font-size: 20px;
+  color: #00ffff;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.contact-item div p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.contact-item a, .contact-item span {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: #00ffff;
+}
+
+.contact-form {
+  flex: 1;
+  background: #1a1e2d;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  text-align: left;
+}
+
+.contact-form h3 {
+  color: #00ffff;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #555;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.form-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom: 1px solid #00ffff;
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #00ffff;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 12px 0;
+  background: #00ffff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+.contact-form .btn:hover {
+  background: #00c4c4;
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -484,6 +596,30 @@ footer {
   height: 3px;
   background-color: #00ffff;
   border-radius: 2px;
+}
+
+/* Matrix Canvas */
+#matrixBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind the content */
+  pointer-events: none;
+  opacity: 0.4; /* Optional: make it more subtle */
+}
+
+/* --- Glow Animation --- */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  }
 }
 
 /* Responsive Styles */
@@ -552,16 +688,25 @@ footer {
   .project-card {
     width: 100%;
   }
-}
+  
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .fishbone::before {
+    left: 20px;
+  }
 
-#matrixBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* behind the content */
-  pointer-events: none;
-  opacity: 0.4; /* Optional: make it more subtle */
-}
+  .bone-item,
+  .bone-item.left,
+  .bone-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 50px;
+  }
 
+  .bone-item::after {
+    left: 20px;
+  }
+}

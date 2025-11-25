@@ -70,6 +70,22 @@
       <p>
         I'm Rayver, passionate about creating interactive and user-friendly web apps. With experience in business analysis, I align technology with business goals.
       </p>
+      <p>
+        My journey in IT has equipped me with a diverse skill set that allows me to approach problems from multiple perspectives, ensuring solutions that are both technically sound and business-aligned.
+      </p>
+      
+      <!-- Skills Section -->
+      <div class="skills">
+        <h3>Skills</h3>
+        <div class="skill-tag">HTML/CSS</div>
+        <div class="skill-tag">JavaScript</div>
+        <div class="skill-tag">Responsive Design</div>
+        <div class="skill-tag">Business Analysis</div>
+        <div class="skill-tag">Problem Solving</div>
+        <div class="skill-tag">Presentation</div>
+        <div class="skill-tag">Creative</div>
+        <div class="skill-tag">Time Management</div>
+      </div>
     </div>
   </section>
 
@@ -97,7 +113,7 @@
       </div>
       <div class="bone-item left">
         <h3>Mabini Tourism Website</h3>
-        <p>I developed a responsive website showcasing Mabini’s tourist attractions using HTML and CSS. Focused on modern design, accessibility, and mobile responsiveness.</p>
+        <p>I developed a responsive website showcasing Mabini's tourist attractions using HTML and CSS. Focused on modern design, accessibility, and mobile responsiveness.</p>
       </div>
       <div class="bone-item right">
         <h3>OAuth Login Integration</h3>
@@ -112,7 +128,7 @@
     <div class="project-container">
       <div class="project-card">
         <h3>Mabini Tourism</h3>
-        <p>Showcases Mabini’s natural beauty, attractions, and culture to promote local tourism and eco-friendly travel..</p>
+        <p>Showcases Mabini's natural beauty, attractions, and culture to promote local tourism and eco-friendly travel..</p>
         <p class="Used">HTML, CSS</p>
         <img src="mtp.JPG" alt="Mabini Tourism Preview" class="project-preview">
         <a href="https://mabini-tourism-llic.vercel.app/" class="btn" target="_blank">View Project</a>
@@ -131,15 +147,75 @@
         <img src="cm.JPG" alt="Mabini Tourism Preview" class="project-preview">
         <a href="https://catch-me-delta.vercel.app/" class="btn" target="_blank">View Project</a>
       </div>
+      <div class="project-card">
+        <h3>Portfolio</h3>
+        <p>A responsive portfolio website showcasing, projects, and experience as an IT student and developer.</p>
+        <p class="Used">HTML, CSS, JavaScript</p>
+        <img src="pf.JPG" alt="Mabini Tourism Preview" class="project-preview">
+        <a href="https://portfolio-five-psi-87.vercel.app/" class="btn" target="_blank">View Project</a>
+      </div><div class="project-card">
+        <h3>Donut Haven v1</h3>
+        <p>An online donut shop with delightful user interface for browsing and selecting delicious donuts and drinks.</p>
+        <p class="Used">HTML, CSS, JavaScript</p>
+        <img src="dhv1.JPG" alt="Mabini Tourism Preview" class="project-preview">
+        <a href="https://donut-haven.vercel.app/" class="btn" target="_blank">View Project</a>
+      </div><div class="project-card">
+        <h3>Donut Haven v2</h3>
+        <p>An improved version of the donut shop with enhanced features and a more polished user experience.</p>
+        <p class="Used">HTML, CSS, JavaScript</p>
+        <img src="dhv2.JPG" alt="Mabini Tourism Preview" class="project-preview">
+        <a href="https://donut-haven-v2.vercel.app/" class="btn" target="_blank">View Project</a>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Contact <span>Details</span></h2>
-    <div class="contact-info">
-      <p><strong>Contact Number: <a href="Tel: 09278212700">09278212700</a></strong></p>
-      <p><strong>Email: <a href="mailto: johnrayversorianoa@gmail.com">johnrayversorianoa@gmail.com</a></strong></p>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <p>Contact Number</p>
+            <a href="Tel: 09278212700">09278212700</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <p>Email</p>
+            <a href="mailto: johnrayversorianoa@gmail.com">johnrayversorianoa@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <p>Address</p>
+            <span>Mabini, Batangas, Philippines</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Send Message</h3>
+        <form id="messageForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -159,6 +235,7 @@
   </footer>
 
   <script src="matrix.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>

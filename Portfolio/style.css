@@ -312,7 +312,7 @@ section:nth-of-type(even) {
   box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
 }
 
-/* Education Section */
+/* Education Section - SIMPLE CLEAN DESIGN - FIXED PROGRAM ALIGNMENT */
 .education {
   padding: 80px 60px;
   text-align: center;
@@ -329,83 +329,368 @@ section:nth-of-type(even) {
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-.education-list {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: auto;
-  text-align: left;
-  position: relative;
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
 }
 
-.education-list::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #00ffff, transparent);
-  opacity: 0.3;
-}
-
-.education-list li {
-  background: rgba(26, 30, 45, 0.7);
-  margin-bottom: 30px;
-  padding: 30px;
+.education-card {
+  background: rgba(26, 30, 45, 0.8);
   border-radius: 15px;
-  transition: all 0.3s ease;
-  position: relative;
+  padding: 30px;
   border: 1px solid rgba(0, 255, 255, 0.1);
-  width: calc(50% - 40px);
+  transition: all 0.3s ease;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
 }
 
-.education-list li:nth-child(odd) {
-  margin-left: 0;
-  margin-right: auto;
+.education-card:hover {
+  transform: translateY(-10px);
+  background: rgba(26, 30, 45, 0.95);
+  border-color: #00ffff;
+  box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
 }
 
-.education-list li:nth-child(even) {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.education-list li::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  background: #00ffff;
+.education-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #00ffff, #00ffaa);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.education-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-content h3 {
+  color: #00ffff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.education-period {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  background: rgba(0, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  min-width: 100px;
+  text-align: center;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-location {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  min-height: 48px; /* INCREASED: To accommodate 2 lines */
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.education-location::before {
+  content: "📍 ";
+  margin-right: 5px;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.education-program {
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 10px;
+  border-left: 3px solid #00ffff;
+  min-height: 80px; /* INCREASED: Fixed equal height for all programs */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers text vertically and horizontally */
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Ensure all program boxes are exactly the same size */
+.education-card:nth-child(1) .education-program {
+  min-height: 80px; /* Bachelor of Science in Information Technology */
+}
+
+.education-card:nth-child(2) .education-program {
+  min-height: 80px; /* Pre-Baccaluarteate Maritime */
+}
+
+.education-card:nth-child(3) .education-program {
+  min-height: 80px; /* Elementary Education */
+}
+
+.education-highlights {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-highlights p {
+  color: #ccc;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.education-highlights i {
+  color: #00ffff;
+  margin-right: 10px;
+  width: 20px;
+  font-size: 14px;
+}
+
+/* Responsive Education Section */
+@media (max-width: 768px) {
+  .education {
+    padding: 60px 20px;
+  }
+  
+  .education-cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .education-card {
+    padding: 25px;
+    min-height: 300px;
+  }
+  
+  .education-content h3 {
+    font-size: 22px;
+    min-height: 55px;
+  }
+  
+  .education-period {
+    height: 36px;
+    font-size: 17px;
+  }
+  
+  .education-location {
+    min-height: 44px;
+    font-size: 15px;
+  }
+  
+  .education-program {
+    min-height: 70px;
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .education-card:nth-child(1) .education-program,
+  .education-card:nth-child(2) .education-program,
+  .education-card:nth-child(3) .education-program {
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-card {
+    padding: 20px;
+    min-height: 280px;
+  }
+  
+  .education-content h3 {
+    font-size: 20px;
+    min-height: 50px;
+  }
+  
+  .education-program {
+    font-size: 16px;
+    min-height: 65px;
+    padding: 10px;
+  }
+  
+  .education-card:nth-child(1) .education-program,
+  .education-card:nth-child(2) .education-program,
+  .education-card:nth-child(3) .education-program {
+    min-height: 65px;
+  }
+  
+  .education-period {
+    height: 34px;
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+  
+  .education-location {
+    min-height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* NEW: Header decoration for centered circle with dots */
+.education-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Position the icon in the center */
+.education-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #00ffff, #00ffaa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  z-index: 2;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Smaller dots on the sides */
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
-.education-list li:nth-child(odd)::before {
-  right: -60px;
+.left-dot {
+  left: calc(50% - 60px); /* Position 60px left from center */
 }
 
-.education-list li:nth-child(even)::before {
-  left: -60px;
+.right-dot {
+  right: calc(50% - 60px); /* Position 60px right from center */
 }
 
-.education-list li strong {
-  color: #00ffff;
-  font-size: 20px;
-  display: block;
-  margin-bottom: 10px;
+/* Optional: Add connecting line between dots */
+.header-decoration::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 60px + 12px); /* Start from right edge of left dot */
+  right: calc(50% - 60px + 12px); /* End at left edge of right dot */
+  height: 2px;
+  background: linear-gradient(to right, 
+    rgba(0, 255, 255, 0.3) 0%,
+    rgba(0, 255, 255, 0.6) 50%,
+    rgba(0, 255, 255, 0.3) 100%);
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.education-list li br {
-  margin-bottom: 5px;
+/* Center align the content */
+.education-content {
+  width: 100%;
+  text-align: center;
 }
 
-.education-list li:hover {
-  transform: translateY(-5px);
-  background: rgba(26, 30, 45, 0.9);
-  border-color: #00ffff;
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+.education-content h3 {
+  text-align: center;
+  justify-content: center;
+}
+
+.education-period {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .left-dot {
+    left: calc(50% - 50px);
+  }
+  
+  .right-dot {
+    right: calc(50% - 50px);
+  }
+  
+  .header-decoration::before {
+    left: calc(50% - 50px + 10px);
+    right: calc(50% - 50px + 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .education-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .left-dot {
+    left: calc(50% - 45px);
+  }
+  
+  .right-dot {
+    right: calc(50% - 45px);
+  }
+  
+  .header-decoration::before {
+    left: calc(50% - 45px + 8px);
+    right: calc(50% - 45px + 8px);
+  }
 }
 
 /* Projects Section */
